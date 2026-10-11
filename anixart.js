@@ -380,7 +380,7 @@
         Lampa.SettingsApi.addComponent({ component: 'anixart', name: 'Anixart', icon: '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' });
         Lampa.SettingsApi.addParam({
             component: 'anixart',
-            param: { name: PROXY_KEY, type: 'input', 'default': '', placeholder: 'https://proxy/?url=' },
+            param: { name: PROXY_KEY, type: 'input', values: '', 'default': '', placeholder: 'https://proxy/?url=' },
             field: { name: 'CORS-прокси', description: 'Необязательно. По умолчанию используется api.allorigins.win. Свой адрес вида https://proxy/?url=' }
         });
     }
