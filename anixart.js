@@ -401,19 +401,57 @@
 
     /* ---------- плеер ---------- */
 
+    // Веб-плеер Lampa создаёт <video crossorigin="anonymous">, а okcdn не отдаёт CORS-заголовки,
+    // поэтому браузер блокирует видео. На время нашего воспроизведения снимаем атрибут:
+    // обычному <video> без crossorigin CORS не нужен.
+    var ours = false;
+
+    function stripCors(v) {
+        if (!v || !v.hasAttribute('crossorigin')) return false;
+        v.removeAttribute('crossorigin');
+        return true;
+    }
+
+    function patchPlayer() {
+        new MutationObserver(function (list) {
+            if (!ours) return;
+            list.forEach(function (m) {
+                [].forEach.call(m.addedNodes, function (n) {
+                    if (n.nodeType !== 1) return;
+                    if (n.tagName === 'VIDEO') stripCors(n);
+                    else if (n.querySelectorAll) [].forEach.call(n.querySelectorAll('video'), stripCors);
+                });
+            });
+        }).observe(document.body, { childList: true, subtree: true });
+
+        Lampa.Player.listener.follow('ready', function () {
+            if (!ours) return;
+            // Если элемент успел начать загрузку с crossorigin — перезапускаем её без него.
+            var v = document.querySelector('.player-video__video');
+            if (stripCors(v) && v.src) v.load();
+        });
+
+        Lampa.Player.listener.follow('destroy', function () { ours = false; });
+    }
+
     function play(item, title) {
         Lampa.Loading.start(function () { Lampa.Loading.stop(); });
         json(API + '/video/' + item.vkId, function (d) {
             Lampa.Loading.stop();
             var s = (d && d.sources) || {};
-            var url = s.hlsUrl || s.mpegFullHdUrl || s.mpegHighUrl || s.mpegMediumUrl || s.mpegLowUrl;
-            if (!url) return Lampa.Noty.show('Anixart: поток не найден');
 
+            // MP4 вместо HLS: okcdn не отдаёт CORS-заголовки, а hls.js без них не работает.
             var quality = {};
-            [['1080p', s.mpegFullHdUrl], ['720p', s.mpegHighUrl], ['480p', s.mpegMediumUrl], ['360p', s.mpegLowUrl]]
+            [['2160p', s.mpeg4kUrl], ['1440p', s.mpegQhdUrl], ['1080p', s.mpegFullHdUrl], ['720p', s.mpegHighUrl],
+                ['480p', s.mpegMediumUrl], ['360p', s.mpegLowUrl], ['240p', s.mpegLowestUrl]]
                 .forEach(function (q) { if (q[1]) quality[q[0]] = q[1]; });
 
+            var keys = Object.keys(quality);
+            var url = keys.length ? quality[keys[0]] : s.hlsUrl;
+            if (!url) return Lampa.Noty.show('Anixart: поток не найден');
+
             var video = { title: title, url: url, quality: quality };
+            ours = true;
             Lampa.Player.play(video);
             Lampa.Player.playlist([video]);
         }, function () {
@@ -592,6 +630,7 @@
         Lampa.Component.add('anixart_catalog', Catalog);
         addMenu();
         addSearch();
+        patchPlayer();
         Lampa.Listener.follow('full', function (e) {
             if (e.type === 'complite') addButton(e);
         });
