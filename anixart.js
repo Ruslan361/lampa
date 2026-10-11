@@ -428,7 +428,15 @@
             if (!ours) return;
             // Если элемент успел начать загрузку с crossorigin — перезапускаем её без него.
             var v = document.querySelector('.player-video__video');
-            if (stripCors(v) && v.src) v.load();
+            // load() сбрасывает уже отданную плеером команду play, поэтому запускаем заново.
+            if (stripCors(v) && v.src) {
+                v.addEventListener('canplay', function once() {
+                    v.removeEventListener('canplay', once);
+                    var p = v.play();
+                    if (p && p.catch) p.catch(function () {});
+                });
+                v.load();
+            }
         });
 
         Lampa.Player.listener.follow('destroy', function () { ours = false; });
