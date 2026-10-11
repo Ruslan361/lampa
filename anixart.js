@@ -6,25 +6,49 @@
 
     var SITE = 'https://anixart.site';
     var API = 'https://plapi.cdnvideohub.com/api/v1/player/sv';
-    var PROXY_KEY = 'anixart_proxy'; // необязательный CORS-прокси, напр. https://cors.example.com/?url=
+    var PROXY_KEY = 'anixart_proxy'; // свой CORS-прокси, напр. https://cors.example.com/?url=
+    var DEFAULT_PROXY = 'https://api.allorigins.win/raw?url=';
 
-    function proxied(url) {
-        var p = Lampa.Storage.get(PROXY_KEY, '');
-        return p ? p + encodeURIComponent(url) : url;
+    // Сайт не отдаёт CORS-заголовки, поэтому в браузере/на ТВ прямой запрос падает.
+    // Пробуем по очереди: свой прокси (если задан) или напрямую, затем публичный прокси.
+    // Удачный вариант запоминаем, чтобы не ждать ошибку на каждом запросе.
+    var working = null;
+
+    function routes() {
+        var own = Lampa.Storage.get(PROXY_KEY, '');
+        return own ? [own] : ['', DEFAULT_PROXY];
     }
 
-    function request(url, ok, fail, post) {
-        var net = new Lampa.Reguest();
-        net.native(proxied(url), ok, function () { fail && fail(); }, post || false, {
-            dataType: 'text',
-            headers: { Accept: 'text/html,application/json' }
-        });
+    function fetchText(url, ok, fail) {
+        var list = routes();
+        if (working !== null && list.indexOf(working) >= 0) {
+            list = [working].concat(list.filter(function (r) { return r !== working; }));
+        }
+
+        (function attempt(i) {
+            if (i >= list.length) return fail && fail();
+            var route = list[i];
+            var net = new Lampa.Reguest();
+            net.timeout(15000);
+            net.native(route ? route + encodeURIComponent(url) : url, function (res) {
+                if (typeof res !== 'string' || !res.length) return attempt(i + 1);
+                working = route;
+                ok(res);
+            }, function () { attempt(i + 1); }, false, { dataType: 'text' });
+        })(0);
+    }
+
+    // Запросы к anixart.site — через fetchText; к API cdnvideohub — напрямую (там CORS открыт).
+    function request(url, ok, fail) {
+        fetchText(url, ok, fail);
     }
 
     function json(url, ok, fail) {
-        request(url, function (t) {
-            try { ok(typeof t === 'string' ? JSON.parse(t) : t); } catch (e) { fail && fail(); }
-        }, fail);
+        var net = new Lampa.Reguest();
+        net.timeout(15000);
+        net.silent(url, function (d) {
+            try { ok(typeof d === 'string' ? JSON.parse(d) : d); } catch (e) { fail && fail(); }
+        }, function () { fail && fail(); });
     }
 
     function abs(u) {
@@ -45,8 +69,8 @@
     }
 
     function search(query, cb) {
-        var body = 'do=search&subaction=search&story=' + encodeURIComponent(query);
-        request(SITE + '/index.php', function (html) { cb(parseCards(html)); }, function () { cb(null); }, body);
+        var url = SITE + '/index.php?do=search&subaction=search&story=' + encodeURIComponent(query);
+        request(url, function (html) { cb(parseCards(html)); }, function () { cb(null); });
     }
 
     function getTitleId(url, cb) {
@@ -357,7 +381,7 @@
         Lampa.SettingsApi.addParam({
             component: 'anixart',
             param: { name: PROXY_KEY, type: 'input', 'default': '', placeholder: 'https://proxy/?url=' },
-            field: { name: 'CORS-прокси', description: 'Необязательно. Адрес вида https://proxy/?url= — для устройств, где запросы к сайту блокируются' }
+            field: { name: 'CORS-прокси', description: 'Необязательно. По умолчанию используется api.allorigins.win. Свой адрес вида https://proxy/?url=' }
         });
     }
 
