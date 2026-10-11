@@ -34,13 +34,15 @@
 
     function routes() {
         var own = Lampa.Storage.get(PROXY_KEY, '');
-        return own ? [own] : ['', DEFAULT_PROXY];
+        // Публичный прокси нестабилен (часто отвечает 522), поэтому даём ему несколько попыток.
+        return own ? [own, own] : ['', DEFAULT_PROXY, DEFAULT_PROXY, DEFAULT_PROXY, DEFAULT_PROXY];
     }
 
     function request(url, ok, fail) {
         var list = routes();
         if (working !== null && list.indexOf(working) >= 0) {
-            list = [working].concat(list.filter(function (r) { return r !== working; }));
+            list = list.filter(function (r) { return r === working; })
+                .concat(list.filter(function (r) { return r !== working; }));
         }
 
         (function attempt(i) {
