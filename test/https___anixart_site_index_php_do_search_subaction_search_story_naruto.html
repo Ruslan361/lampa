@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Поиск по сайту » AnixART - Смотрите аниме онлайн на ПК и мобильном</title>
+<meta name="charset" content="utf-8">
+<meta name="title" content="Поиск по сайту » AnixART - Смотрите аниме онлайн на ПК и мобильном">
+<meta name="description" content="AnixART- сайт приложение для просмотра аниме на ПК и мобильных телефонах">
+<meta name="keywords" content="AnimeMix ANIXART , приложение, мобильный, iOS, апл, андроид, смотреть, онлайн, аниме, скачать">
+<meta name="generator" content="DataLife Engine (https://dle-news.ru)">
+<link rel="alternate" type="application/rss+xml" title="AnixART - Смотрите аниме онлайн на ПК и мобильном" href="https://anixart.site/rss.xml">
+<link rel="search" type="application/opensearchdescription+xml" title="AnixART - Смотрите аниме онлайн на ПК и мобильном" href="https://anixart.site/index.php?do=opensearch">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="Поиск по сайту » AnixART - Смотрите аниме онлайн на ПК и мобильном">
+<meta property="twitter:description" content="AnixART- сайт приложение для просмотра аниме на ПК и мобильных телефонах">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AnixART - Смотрите аниме онлайн на ПК и мобильном">
+<meta property="og:title" content="Поиск по сайту » AnixART - Смотрите аниме онлайн на ПК и мобильном">
+<meta property="og:description" content="AnixART- сайт приложение для просмотра аниме на ПК и мобильных телефонах">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#181d2d">
+	<link rel="preload" href="/templates/Anixart/css/common.css?v-10" as="style">
+	<link rel="preload" href="/templates/Anixart/css/styles.css?v-27" as="style">
+	<link rel="preload" href="/templates/Anixart/css/engine.css?v-1" as="style">
+	<link rel="preload" href="/templates/Anixart/css/fontawesome.css" as="style">
+	<link rel="preload" href="/templates/Anixart/webfonts/Circe-300.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/templates/Anixart/webfonts/Circe-400.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/templates/Anixart/webfonts/Circe-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/templates/Anixart/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>
+    
+	<link rel="shortcut icon" href="/templates/Anixart/images/favicon1.svg" />
+	<link href="/templates/Anixart/css/common.css?v-15" type="text/css" rel="stylesheet" />
+	<link href="/templates/Anixart/css/styles.css?v-33" type="text/css" rel="stylesheet" />
+	<link href="/templates/Anixart/css/engine.css?v-1" type="text/css" rel="stylesheet" /> 
+	<link href="/templates/Anixart/css/fontawesome.css" type="text/css" rel="stylesheet" />
+	<!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
+</head>
+
+<body>
+<!-- Yandex.RTB R-A-3189140-5 -->
+<script>
+window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-3189140-5",
+		"type": "floorAd",
+		"platform": "touch"
+	})
+})
+</script>
+	<script>
+		function switchLight() {
+			if (localStorage.getItem('theme') === 'light') {
+				document.querySelector('body').classList.add('lt-is-active');
+			} else {
+				document.querySelector('body').classList.remove('lt-is-active');
+			};
+		};
+		switchLight();
+	</script>	
+
+	<div class="wrapper ">
+
+		<div class="wrapper-container wrapper-main">
+
+			<header class="header vw100 anim" id="header">
+				<div class="header__inner d-flex ai-center anim">
+					<button class="header__btn-menu js-show-menu"><span class="fal fa-bars"></span></button>
+					<a href="/" class="logo header__logo">Anix<span>ART</span><span></span></a>
+					<div class="header__search flex-grow-1">
+						<form id="quicksearch" method="post">
+							<input type="hidden" name="do" value="search">
+							<input type="hidden" name="subaction" value="search">
+							<div class="header__search-box">
+								<input id="story" name="story" placeholder="Поиск аниме..." type="text" autocomplete="off">
+								<button type="submit" class="search-btn"><span class="fal fa-search"></span></button>
+							</div>
+						</form>
+					</div>
+					<ul class="theme-toggle" title="Сменить цвет дизайна">
+						<li><span class="fal fa-moon"></span></li>
+						<li><span class="fal fa-sun"></span></li>
+					</ul>
+					<div class="telega"><a href="https://t.me/Anixart_me" target="blank"><span class="fab fa-telegram"></span></a></div>
+					<div class="header__login d-flex ai-center">
+
+<button class="header__login-btn header__login-btn--not-logged js-show-login">Вход</button>
+
+
+
+<div class="login login--not-logged d-none">
+	<div class="login__header d-flex jc-space-between ai-center">
+		<div class="login__title stretch-free-width ws-nowrap">Войти <a href="/?do=register">Регистрация</a></div>
+		<div class="login__close"><span class="fal fa-times"></span></div>
+	</div>
+	<form method="post">
+		<div class="login__social">
+		<div class="login__social-caption">Войти через</div>
+		<div class="login__social-btns">
+			<a href="https://oauth.vk.com/authorize?client_id=51588983&amp;redirect_uri=https%3A%2F%2Fanixart.site%2Findex.php%3Fdo%3Dauth-social%26provider%3Dvk&amp;scope=offline%2Cemail&amp;state=a7b3ec7a7df1642b72e2ee7bc3b07090&amp;response_type=code&amp;v=5.90" target="_blank"><img loading="lazy" src="/templates/Anixart/images/social/vk.png" alt="" /></a>
+			
+			
+			<a href="https://oauth.mail.ru/login?client_id=6e72e79017c744fc86f309cb7668d33b&amp;redirect_uri=https%3A%2F%2Fanixart.site%2Findex.php%3Fdo%3Dauth-social%26provider%3Dmailru&amp;scope=userinfo&amp;state=a7b3ec7a7df1642b72e2ee7bc3b07090&amp;response_type=code" target="_blank"><img loading="lazy" src="/templates/Anixart/images/social/mail.png" alt="" /></a>
+			
+			<a href="https://oauth.yandex.ru/authorize?client_id=d983c76488b14a92b11bff1a15c20b34&amp;redirect_uri=https%3A%2F%2Fanixart.site%2Findex.php%3Fdo%3Dauth-social%26provider%3Dyandex&amp;state=a7b3ec7a7df1642b72e2ee7bc3b07090&amp;response_type=code" target="_blank"><img loading="lazy" src="/templates/Anixart/images/social/yandex.png" alt="" /></a>
+		</div>
+	</div>
+	<div class="login__content">
+		<div class="login__row">
+			<div class="login__caption">Логин:</div>
+			<div class="login__input"><input type="text" name="login_name" id="login_name" placeholder="Ваш логин"/></div>
+			<span class="fal fa-user"></span>
+		</div>
+		<div class="login__row">
+			<div class="login__caption">Пароль: <a href="https://anixart.site/index.php?do=lostpassword">Забыли пароль?</a></div>
+			<div class="login__input"><input type="password" name="login_password" id="login_password" placeholder="Ваш пароль" /></div>
+			<span class="fal fa-lock"></span>
+		</div>
+		<label class="login__row checkbox" for="login_not_save">
+			<input type="checkbox" name="login_not_save" id="login_not_save" value="1"/>
+			<span>Не запоминать меня</span>
+		</label>
+		<div class="login__row">
+			<button onclick="submit();" type="submit" title="Вход">Войти на сайт</button>
+			<input name="login" type="hidden" id="login" value="submit" />
+		</div>
+	</div>
+
+	</form>
+</div>
+</div>
+				</div>
+				<div class="header__menu">
+					<div class="header__menu-inner wrapper-container">							<div class="nav-col">
+							<div class="nav-title">Меню</div>
+								<ul class="nav-menu">
+									<li><a  href="/mylists/">Закладки</a></li>
+									<li><a  href="/top-anime-anixart.html">ТОП 100</a></li>
+									<li><a  href="/anime/god/2026/">Аниме 2026 года</a></li>
+                                    <li><a  href="/schedule/">Расписание</a></li>									
+								</ul>
+								<div class="nav-title">Жанры</div>
+								<ul class="nav-menu">
+									<li><a href="/anime/zhanr/сёнен/">Сёнен</a></li>
+									<li><a   href="/anime/zhanr/сэйнэн/">Сэйнэн</a></li>
+									<li><a   href="/anime/zhanr/Сёдзё/">Сёдзё</a></li>
+									<li><a  href="/anime/zhanr/Дзёсей/">Дзёсей</a></li>
+									<li><a   href="/anime/zhanr/Комедия/">Комедия</a></li>
+									<li><a   href="/anime/zhanr/Романтика/">Романтика</a></li>
+									<li><a   href="/anime/zhanr/Школа/">Школа</a></li>
+									<li><a   href="/anime/zhanr/Безумие/">Безумие</a></li>
+									<li><a   href="/anime/zhanr/Боевые искусства/">Боевые искусства</a></li>
+									<li><a   href="/anime/zhanr/Вампиры/">Вампиры</a></li>
+									<li><a   href="/anime/zhanr/Военное/">Военное</a></li>
+									<li><a   href="/anime/zhanr/Гарем/">Гарем</a></li>
+									<li><a   href="/anime/zhanr/Гурман/">Гурман</a></li>
+									<li><a   href="/anime/zhanr/Демоны/">Демоны</a></li>
+									<li><a   href="/anime/zhanr/Детектив/">Детектив</a></li>
+									<li><a   href="/anime/zhanr/Детское/">Детское</a></li>
+									<li><a   href="/anime/zhanr/Драма/">Драма</a></li>
+									<li><a   href="/anime/zhanr/Игры/">Игры</a></li>
+									<li><a   href="/anime/zhanr/Исторический/">Исторический</a></li>
+									<li><a   href="/anime/zhanr/Космос/">Космос</a></li>
+									<li><a   href="/anime/zhanr/Машины/">Машины</a></li>
+									<li><a   href="/anime/zhanr/Меха/">Меха</a></li>
+									<li><a   href="/anime/zhanr/Музыка/">Музыка</a></li>
+									<li><a   href="/anime/zhanr/Пародия/">Пародия</a></li>
+									<li><a   href="/anime/zhanr/Повседневность/">Повседневность</a></li>
+									<li><a   href="/anime/zhanr/Полиция/">Полиция</a></li>
+									<li><a   href="/anime/zhanr/Приключения/">Приключения</a></li>
+									<li><a   href="/anime/zhanr/Психологическое/">Психологическое</a></li>
+									<li><a   href="/anime/zhanr/Работа/">Работа</a></li>
+									<li><a   href="/anime/zhanr/Самураи/">Самураи</a></li>
+									<li><a   href="/anime/zhanr/Сверхъестественное/">Сверхъестественное</a></li>
+									<li><a   href="/anime/zhanr/Спорт/">Спорт</a></li>
+									<li><a   href="/anime/zhanr/Супер сила/">Супер сила</a></li>
+									<li><a   href="/anime/zhanr/Ужасы/">Ужасы</a></li>
+									<li><a   href="/anime/zhanr/Фантастика/">Фантастика</a></li>
+									<li><a   href="/anime/zhanr/Фэнтези/">Фэнтези</a></li>
+									<li><a   href="/anime/zhanr/Экшен/">Экшен</a></li>
+									<li><a   href="/anime/zhanr/Этти/">Этти</a></li>
+									<li><a   href="/anime/zhanr/Триллер/">Триллер</a></li>
+								</ul>
+							</div>
+							<div class="nav-col">
+								<div class="nav-title">Статус</div>
+								<ul class="nav-menu">
+									<li><a  href="/ongoingi/">Онгоинги</a></li>
+									<li><a  href="/zavershennye/">Завершенные</a></li>
+									<li><a  href="/anonsy/">Анонсы</a></li>
+									
+								</ul>
+								<div class="nav-title">Тип</div>
+								<ul class="nav-menu">
+									<li><a  href="/anime/tip/тв-сериал/">TV Сериал</a></li>
+									<li><a  href="/anime/tip/OVA/">OVA</a></li>
+									<li><a  href="/anime/tip/ONA/">ONA</a></li>
+									<li><a  href="/anime/tip/ФИЛЬМ/">ФИЛЬМ</a></li>
+								</ul>
+								<div class="nav-title">Год</div>
+								<ul class="nav-menu">
+                                <li><a  href="/anime/god/2026/">2026</a></li>
+                                    <li><a  href="/anime/god/2025/">2025</a></li>
+								    <li><a  href="/anime/god/2024/">2024</a></li>
+									<li><a  href="/anime/god/2023/">2023</a></li>
+									<li><a  href="/anime/god/2022/">2022</a></li>
+									<li><a  href="/anime/god/2021/">2021</a></li>
+									<li><a  href="/anime/god/2020/">2020</a></li>
+									<li><a  href="/anime/god/2019/">2019</a></li>
+									<li><a  href="/anime/god/2018/">2018</a></li>
+									<li><a  href="/anime/god/2017/">2017</a></li>
+									<li><a  href="/anime/god/2016/">2016</a></li>
+									<li><a  href="/anime/god/2015/">2015</a></li>
+									<li><a  href="/anime/god/2014/">2014</a></li>
+									<li><a  href="/anime/god/2013/">2013</a></li>
+									<li><a  href="/anime/god/2012/">2012</a></li>
+								</ul>
+								
+								<div class="nav-title">Сезон</div>
+								<ul class="nav-menu"> 
+                                <li><a   href="/anime/sezon_goda/лето 2026/">Зима 2026</a></li>    
+                                <li><a   href="/anime/sezon_goda/осень 2025/">Осень 2025</a></li>    
+                                <li><a   href="/anime/sezon_goda/лето 2025/">Лето 2025</a></li>    
+                                <li><a   href="/anime/sezon_goda/весна 2025/">Весна 2025</a></li>    
+                                <li><a   href="/anime/sezon_goda/зима 2025/">Зима 2025</a></li>    
+                                <li><a   href="/anime/sezon_goda/осень 2024/">Осень 2024</a></li>    
+								<li><a   href="/anime/sezon_goda/лето 2024/">Лето 2024</a></li>
+								<li><a   href="/anime/sezon_goda/весна 2024/">Весна 2024</a></li>
+									<li><a   href="/anime/sezon_goda/зима 2024/">Зима 2024</a></li>
+								<li><a   href="/anime/sezon_goda/осень 2023/">Осень 2023</a></li>
+								<li><a   href="/anime/sezon_goda/лето 2023/">Лето 2023</a></li>
+								<li><a   href="/anime/sezon_goda/весна 2023/">Весна 2023</a></li>
+									<li><a   href="/anime/sezon_goda/зима 2023/">Зима 2023</a></li>
+									<li><a   href="/anime/sezon_goda/осень 2022/">Осень 2022</a></li>
+									<li><a   href="/anime/sezon_goda/лето 2022/">Лето 2022</a></li>
+									<li><a   href="/anime/sezon_goda/весна 2022/">Весна 2022</a></li>
+									<li><a   href="/anime/sezon_goda/зима 2022/">Зима 2022</a></li>
+									<li><a   href="/anime/sezon_goda/осень 2021/">Осень 2021</a></li>
+									<li><a   href="/anime/sezon_goda/лето 2021/">Лето 2021</a></li>
+									<li><a   href="/anime/sezon_goda/весна 2021/">Весна 2021</a></li>
+									<li><a   href="/anime/sezon_goda/зима 2021/">Зима 2021</a></li>
+									<li><a   href="/anime/sezon_goda/осень 2020/">Осень 2020</a></li>
+
+									
+								</ul>
+							</div></div>
+				</div>
+			</header>
+
+			<!-- END HEADER -->
+
+			<main class="content">
+
+				
+
+			
+				
+				
+
+				
+				<div class="sect__content grid-items"><div id="dle-content"><form name="fullsearch" id="fullsearch" action="https://anixart.site/index.php?do=search" method="post">
+<input type="hidden" name="do" id="do" value="search" />
+<input type="hidden" name="subaction" id="subaction" value="search" />
+<input type="hidden" name="search_start" id="search_start" value="0" />
+<input type="hidden" name="full_search" id="full_search" value="0" />
+<input type="hidden" name="result_from" id="result_from" value="1" />
+<div class="search-page">
+	<h1 class="search-page__title">Поиск по сайту</h1>
+	<div class="searchtable" id="searchtable" name="searchtable"><table style="width:100%;">
+  <tr>
+    <td class="search">
+      <div style="margin:10px;">
+                <input type="text" name="story" id="searchinput" value="naruto" class="textin" style="width:250px" onchange="document.getElementById('result_from').value = 1"><br /><br />
+                <input type="button" class="bbcodes" name="dosearch" id="dosearch" value="Начать поиск" onclick="javascript:list_submit(-1); return false;">
+                <input type="button" class="bbcodes" name="dofullsearch" id="dofullsearch" value="Расширенный поиск" onclick="javascript:full_submit(1); return false;" />
+            </div>
+
+        </td>
+    </tr>
+</table></div>
+	<div class="message-info message-info--yellow">По Вашему запросу найдено 27 ответов (Результаты запроса 1 - 12) :</div>
+</div><script>
+<!--
+function clearform(frmname){
+  var frm = document.getElementById(frmname);
+  for (var i=0;i<frm.length;i++) {
+    var el=frm.elements[i];
+    if (el.type=="checkbox" || el.type=="radio") {
+    	if (el.name=='showposts') {document.getElementById('rb_showposts_0').checked=1; } else {el.checked=0; }
+    }
+    if ((el.type=="text") || (el.type=="textarea") || (el.type == "password")) { el.value=""; continue; }
+    if ((el.type=="select-one") || (el.type=="select-multiple")) { el.selectedIndex=0; }
+  }
+  
+  if( document.getElementById('replylimit') ) {
+  	document.getElementById('replylimit').value = 0;
+  }
+  
+  document.getElementById('search_start').value = 0;
+  document.getElementById('result_from').value = 1;
+}
+function list_submit(prm){
+  var frm = document.getElementById('fullsearch');
+	if (prm == -1) {
+		prm=0;
+		frm.result_from.value=1;
+	} else {
+		frm.result_from.value=(prm-1) * 12 + 1;
+	}
+	frm.search_start.value=prm;
+
+  frm.submit();
+  return false;
+}
+function full_submit(prm){
+    document.getElementById('fullsearch').full_search.value=prm;
+    list_submit(-1);
+}
+//-->
+</script>
+</form>
+
+<a class="item item-poster grid-item" href="https://anixart.site/7360-put-naruto.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-11/put-naruto.jpg" loading="lazy" alt="Путь Наруто">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">8.5</div>
+		<div class="item__rating1">8.46</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Путь Наруто</div>
+	<div class="item-poster__meta ws-nowrap">2022, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/1781-boruto-novoe-pokolenie-naruto.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/boruto-novoe-pokolenie-naruto.jpg" loading="lazy" alt="Боруто: Новое поколение Наруто">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">5.8</div>
+		<div class="item__rating1">6.06</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Боруто: Новое поколение Наруто</div>
+	<div class="item-poster__meta ws-nowrap">2017, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/5267-naruto.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto.jpg" loading="lazy" alt="Наруто">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.5</div>
+		<div class="item__rating1">7.98</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто</div>
+	<div class="item-poster__meta ws-nowrap">2002, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/5228-naruto-najti-temno-krasnyj-chetyrehlistnyj-klever.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto-najti-temno-krasnyj-chetyrehlistnyj-klever.jpg" loading="lazy" alt="Наруто: Найти тёмно-красный четырёхлистный клевер!">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">10</div>
+		<div class="item__rating1">6.54</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто: Найти тёмно-красный четырёхлистный клевер!</div>
+	<div class="item-poster__meta ws-nowrap">2003, сёнен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/5227-naruto-bitva-na-hidden-fols.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto-bitva-na-hidden-fols.jpg" loading="lazy" alt="Наруто: Битва на Хидден-Фолс">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">10</div>
+		<div class="item__rating1">6.76</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто: Битва на Хидден-Фолс</div>
+	<div class="item-poster__meta ws-nowrap">2003, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/5001-naruto-sportivnyj-festival-konohi.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto-sportivnyj-festival-konohi.jpg" loading="lazy" alt="Наруто: Спортивный фестиваль Конохи">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">10</div>
+		<div class="item__rating1">6.87</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто: Спортивный фестиваль Конохи</div>
+	<div class="item-poster__meta ws-nowrap">2004, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/4986-na-sever-za-almaznoj-pylju.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/na-sever-za-almaznoj-pylju.jpg" loading="lazy" alt="На север за алмазной пылью">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">0</div>
+		<div class="item__rating1">6.61</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">На север за алмазной пылью</div>
+	<div class="item-poster__meta ws-nowrap">2004, драма,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/4977-naruto-1-kniga-iskusstv-nindzja-snezhnoj-princessy.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto-1-kniga-iskusstv-nindzja-snezhnoj-princessy.jpg" loading="lazy" alt="Наруто 1: Книга искусств ниндзя Снежной принцессы">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">10</div>
+		<div class="item__rating1">7.1</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто 1: Книга искусств ниндзя Снежной принцессы</div>
+	<div class="item-poster__meta ws-nowrap">2004, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/4921-naruto-nakonec-taki-sorevnovanija-dzeninov-protiv-gjeninov.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto-nakonec-taki-sorevnovanija-dzeninov-protiv-gjeninov.jpg" loading="lazy" alt="Наруто: Наконец-таки! Соревнования дзёнинов против гэнинов!">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">10</div>
+		<div class="item__rating1">6.78</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто: Наконец-таки! Соревнования дзёнинов против гэнинов!</div>
+	<div class="item-poster__meta ws-nowrap">2005, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/4920-naruto-2-bolshoe-stolknovenie-prizrachnye-ruiny-v-glubine-zemli.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto-2-bolshoe-stolknovenie-prizrachnye-ruiny-v-glubine-zemli.jpg" loading="lazy" alt="Наруто 2: Большое столкновение! Призрачные руины в глубине земли">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">10</div>
+		<div class="item__rating1">6.87</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто 2: Большое столкновение! Призрачные руины в глубине земли</div>
+	<div class="item-poster__meta ws-nowrap">2005, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/4725-naruto-3-grandioznyj-perepoloh-bunt-zverej-na-ostrove-mikazuki.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto-3-grandioznyj-perepoloh-bunt-zverej-na-ostrove-mikazuki.jpg" loading="lazy" alt="Наруто 3: Грандиозный переполох! Бунт зверей на острове Миказуки!">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">10</div>
+		<div class="item__rating1">6.9</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто 3: Грандиозный переполох! Бунт зверей на острове Миказуки!</div>
+	<div class="item-poster__meta ws-nowrap">2006, экшен,</div>
+	
+</a>
+
+
+
+
+
+
+<a class="item item-poster grid-item" href="https://anixart.site/4559-naruto-uragannye-hroniki-1-adepty-temnogo-carstva.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/naruto-uragannye-hroniki-1-adepty-temnogo-carstva.jpg" loading="lazy" alt="Наруто: Ураганные хроники 1 — Адепты Тёмного царства">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.5</div>
+		<div class="item__rating1">7.29</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Наруто: Ураганные хроники 1 — Адепты Тёмного царства</div>
+	<div class="item-poster__meta ws-nowrap">2007, экшен,</div>
+	
+</a>
+
+
+
+
+<div class="pagination ignore-select d-flex jc-center ai-center" id="pagination">
+	<div class="pagination__pages-btn"><span><span class="fal fa-chevron-left"></span></span></div>
+	<div class="pagination__pages d-flex"> <span>1</span> <a onclick="javascript:list_submit(2); return(false)" href="#">2</a> <a onclick="javascript:list_submit(3); return(false)" href="#">3</a> </div>
+	<div class="pagination__pages-btn"><a name="nextlink" id="nextlink" onclick="javascript:list_submit(2); return(false)" href="#"><span class="fal fa-chevron-right"></span></a></div>
+</div></div></div>
+				
+
+
+
+				
+
+
+
+
+			</main>
+
+			<!-- END CONTENT -->
+
+			<footer class="footer d-flex ai-center vw100">
+				<div class="logo footer__logo">Anix<span>ART</span></div>почта для правообладателей AnimeOnlineSu.net@ya.ru
+
+				<ul class="footer__menu flex-grow-1 d-flex jc-flex-end">
+					<li><a href="/">Главная</a></li>
+					<li><a href="#">Новинки</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="/?do=feedback">Контакты</a></li>
+				</ul>
+<!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
+target="_blank"><img id="licnt8F24" width="31" height="31" style="border:0" 
+title="LiveInternet"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licnt8F24").src=
+"https://counter.yadro.ru/hit?t44.1;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+
+			</footer>
+
+			<!-- END FOOTER -->
+
+		</div>
+
+		<!-- END WRAPPER-MAIN -->
+
+	</div>
+
+	<!-- END WRAPPER -->
+	
+	
+<script src="/engine/classes/js/jquery3.js?v=905b7"></script>
+<script src="/engine/classes/js/jqueryui3.js?v=905b7" defer></script>
+<script src="/engine/classes/js/dle_js.js?v=905b7" defer></script>
+<script src="/templates/Anixart/custom/assets/libs.js?v=905b7" defer></script>
+	<script src="/templates/Anixart/js/libs.js?v-2"></script>
+	<script src="/templates/Anixart/js/filter.js"></script>
+	<script>
+<!--
+var dle_root       = '/';
+var dle_admin      = '';
+var dle_login_hash = '5fc2cef46c8e3ac53dde5b23c9f5c69eb83b2a00';
+var dle_group      = 5;
+var dle_skin       = 'Anixart';
+var dle_wysiwyg    = '2';
+var quick_wysiwyg  = '2';
+var dle_min_search = '4';
+var dle_act_lang   = ["Да", "Нет", "Ввод", "Отмена", "Сохранить", "Удалить", "Загрузка. Пожалуйста, подождите..."];
+var menu_short     = 'Быстрое редактирование';
+var menu_full      = 'Полное редактирование';
+var menu_profile   = 'Просмотр профиля';
+var menu_send      = 'Отправить сообщение';
+var menu_uedit     = 'Админцентр';
+var dle_info       = 'Информация';
+var dle_confirm    = 'Подтверждение';
+var dle_prompt     = 'Ввод информации';
+var dle_req_field  = ["Заполните поле с именем", "Заполните поле с сообщением", "Заполните поле с темой сообщения"];
+var dle_del_agree  = 'Вы действительно хотите удалить? Данное действие невозможно будет отменить';
+var dle_spam_agree = 'Вы действительно хотите отметить пользователя как спамера? Это приведёт к удалению всех его комментариев';
+var dle_c_title    = 'Отправка жалобы';
+var dle_complaint  = 'Укажите текст Вашей жалобы для администрации:';
+var dle_mail       = 'Ваш e-mail:';
+var dle_big_text   = 'Выделен слишком большой участок текста.';
+var dle_orfo_title = 'Укажите комментарий для администрации к найденной ошибке на странице:';
+var dle_p_send     = 'Отправить';
+var dle_p_send_ok  = 'Уведомление успешно отправлено';
+var dle_save_ok    = 'Изменения успешно сохранены. Обновить страницу?';
+var dle_reply_title= 'Ответ на комментарий';
+var dle_tree_comm  = '0';
+var dle_del_news   = 'Удалить статью';
+var dle_sub_agree  = 'Вы действительно хотите подписаться на комментарии к данной публикации?';
+var dle_unsub_agree  = 'Вы действительно хотите отписаться от комментариев к данной публикации?';
+var dle_captcha_type  = '0';
+var dle_share_interesting  = ["Поделиться ссылкой на выделенный текст", "Twitter", "Facebook", "Вконтакте", "Прямая ссылка:", "Нажмите правой клавишей мыши и выберите «Копировать ссылку»"];
+var DLEPlayerLang     = {prev: 'Предыдущий',next: 'Следующий',play: 'Воспроизвести',pause: 'Пауза',mute: 'Выключить звук', unmute: 'Включить звук', settings: 'Настройки', enterFullscreen: 'На полный экран', exitFullscreen: 'Выключить полноэкранный режим', speed: 'Скорость', normal: 'Обычная', quality: 'Качество', pip: 'Режим PiP'};
+var allow_dle_delete_news   = false;
+var dle_search_delay   = false;
+var dle_search_value   = '';
+jQuery(function($){
+FastSearch();
+});
+//-->
+</script><script>
+let urlFilter = 0;
+let dleFilterJSData = [];
+let dleFilterId = 1;
+</script>
+<script type="text/javascript" src="/engine/classes/js/mylists.js"></script><script type="text/javascript">$(document).ready(function(e) { MyLists = new MyLists(false, '{"_1_":["\u041b\u044e\u0431\u0438\u043c\u043e\u0435","likeserials"],"_2_":["\u0421\u043c\u043e\u0442\u0440\u044e","watching"],"_3_":["\u0417\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u043e","scheduled"],"_4_":["\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u043e","viewed"],"_5_":["\u041e\u0442\u043b\u043e\u0436\u0435\u043d\u043e","postponed"],"_6_":["\u0411\u0440\u043e\u0448\u0435\u043d\u043e","thrown"]}'); });</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104070838', 'ym');
+
+    ym(104070838, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/104070838" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+		<script type="text/javascript"> var initialDateStr = ""; </script>
+
+<script src="/templates/Anixart/lazydev/dle_filter/assets/dle_filter.js" defer></script>
+<script src="/engine/lazydev/dle_filter/lib/dle_filter.js.php" defer></script>
+<script src="/templates/Anixart/lazydev/dle_filter/assets/dle_filter.js" defer></script>
+ <script src="https://player.cdnvideohub.com/s2/stable/video-player.umd.js"></script>
+
+</body>
+</html>
+
+<!-- DataLife Engine Copyright SoftNews Media Group (http://dle-news.ru) -->

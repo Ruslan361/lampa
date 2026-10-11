@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>AnixART - Смотрите аниме онлайн на ПК и мобильном</title>
+<meta name="charset" content="utf-8">
+<meta name="title" content="AnixART - Смотрите аниме онлайн на ПК и мобильном">
+<meta name="description" content="AnixART- сайт приложение для просмотра аниме на ПК и мобильных телефонах">
+<meta name="keywords" content="AnimeMix ANIXART , приложение, мобильный, iOS, апл, андроид, смотреть, онлайн, аниме, скачать">
+<meta name="generator" content="DataLife Engine (https://dle-news.ru)">
+<link rel="canonical" href="https://anixart.site/">
+<link rel="alternate" type="application/rss+xml" title="AnixART - Смотрите аниме онлайн на ПК и мобильном" href="https://anixart.site/rss.xml">
+<link rel="search" type="application/opensearchdescription+xml" title="AnixART - Смотрите аниме онлайн на ПК и мобильном" href="https://anixart.site/index.php?do=opensearch">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="AnixART - Смотрите аниме онлайн на ПК и мобильном">
+<meta property="twitter:description" content="AnixART- сайт приложение для просмотра аниме на ПК и мобильных телефонах">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AnixART - Смотрите аниме онлайн на ПК и мобильном">
+<meta property="og:title" content="AnixART - Смотрите аниме онлайн на ПК и мобильном">
+<meta property="og:description" content="AnixART- сайт приложение для просмотра аниме на ПК и мобильных телефонах">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#181d2d">
+	<link rel="preload" href="/templates/Anixart/css/common.css?v-10" as="style">
+	<link rel="preload" href="/templates/Anixart/css/styles.css?v-27" as="style">
+	<link rel="preload" href="/templates/Anixart/css/engine.css?v-1" as="style">
+	<link rel="preload" href="/templates/Anixart/css/fontawesome.css" as="style">
+	<link rel="preload" href="/templates/Anixart/webfonts/Circe-300.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/templates/Anixart/webfonts/Circe-400.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/templates/Anixart/webfonts/Circe-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/templates/Anixart/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>
+    
+	<link rel="shortcut icon" href="/templates/Anixart/images/favicon1.svg" />
+	<link href="/templates/Anixart/css/common.css?v-15" type="text/css" rel="stylesheet" />
+	<link href="/templates/Anixart/css/styles.css?v-33" type="text/css" rel="stylesheet" />
+	<link href="/templates/Anixart/css/engine.css?v-1" type="text/css" rel="stylesheet" /> 
+	<link href="/templates/Anixart/css/fontawesome.css" type="text/css" rel="stylesheet" />
+	<!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
+</head>
+
+<body>
+<!-- Yandex.RTB R-A-3189140-5 -->
+<script>
+window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-3189140-5",
+		"type": "floorAd",
+		"platform": "touch"
+	})
+})
+</script>
+	<script>
+		function switchLight() {
+			if (localStorage.getItem('theme') === 'light') {
+				document.querySelector('body').classList.add('lt-is-active');
+			} else {
+				document.querySelector('body').classList.remove('lt-is-active');
+			};
+		};
+		switchLight();
+	</script>	
+
+	<div class="wrapper  add-bg">
+
+		<div class="wrapper-container wrapper-main">
+
+			<header class="header vw100 anim" id="header">
+				<div class="header__inner d-flex ai-center anim">
+					<button class="header__btn-menu js-show-menu"><span class="fal fa-bars"></span></button>
+					<a href="/" class="logo header__logo">Anix<span>ART</span><span></span></a>
+					<div class="header__search flex-grow-1">
+						<form id="quicksearch" method="post">
+							<input type="hidden" name="do" value="search">
+							<input type="hidden" name="subaction" value="search">
+							<div class="header__search-box">
+								<input id="story" name="story" placeholder="Поиск аниме..." type="text" autocomplete="off">
+								<button type="submit" class="search-btn"><span class="fal fa-search"></span></button>
+							</div>
+						</form>
+					</div>
+					<ul class="theme-toggle" title="Сменить цвет дизайна">
+						<li><span class="fal fa-moon"></span></li>
+						<li><span class="fal fa-sun"></span></li>
+					</ul>
+					<div class="telega"><a href="https://t.me/Anixart_me" target="blank"><span class="fab fa-telegram"></span></a></div>
+					<div class="header__login d-flex ai-center">
+
+<button class="header__login-btn header__login-btn--not-logged js-show-login">Вход</button>
+
+
+
+<div class="login login--not-logged d-none">
+	<div class="login__header d-flex jc-space-between ai-center">
+		<div class="login__title stretch-free-width ws-nowrap">Войти <a href="/?do=register">Регистрация</a></div>
+		<div class="login__close"><span class="fal fa-times"></span></div>
+	</div>
+	<form method="post">
+		<div class="login__social">
+		<div class="login__social-caption">Войти через</div>
+		<div class="login__social-btns">
+			<a href="https://oauth.vk.com/authorize?client_id=51588983&amp;redirect_uri=https%3A%2F%2Fanixart.site%2Findex.php%3Fdo%3Dauth-social%26provider%3Dvk&amp;scope=offline%2Cemail&amp;state=1cc2b40ebb7568741f7be3c2d3c9cc7d&amp;response_type=code&amp;v=5.90" target="_blank"><img loading="lazy" src="/templates/Anixart/images/social/vk.png" alt="" /></a>
+			
+			
+			<a href="https://oauth.mail.ru/login?client_id=6e72e79017c744fc86f309cb7668d33b&amp;redirect_uri=https%3A%2F%2Fanixart.site%2Findex.php%3Fdo%3Dauth-social%26provider%3Dmailru&amp;scope=userinfo&amp;state=1cc2b40ebb7568741f7be3c2d3c9cc7d&amp;response_type=code" target="_blank"><img loading="lazy" src="/templates/Anixart/images/social/mail.png" alt="" /></a>
+			
+			<a href="https://oauth.yandex.ru/authorize?client_id=d983c76488b14a92b11bff1a15c20b34&amp;redirect_uri=https%3A%2F%2Fanixart.site%2Findex.php%3Fdo%3Dauth-social%26provider%3Dyandex&amp;state=1cc2b40ebb7568741f7be3c2d3c9cc7d&amp;response_type=code" target="_blank"><img loading="lazy" src="/templates/Anixart/images/social/yandex.png" alt="" /></a>
+		</div>
+	</div>
+	<div class="login__content">
+		<div class="login__row">
+			<div class="login__caption">Логин:</div>
+			<div class="login__input"><input type="text" name="login_name" id="login_name" placeholder="Ваш логин"/></div>
+			<span class="fal fa-user"></span>
+		</div>
+		<div class="login__row">
+			<div class="login__caption">Пароль: <a href="https://anixart.site/index.php?do=lostpassword">Забыли пароль?</a></div>
+			<div class="login__input"><input type="password" name="login_password" id="login_password" placeholder="Ваш пароль" /></div>
+			<span class="fal fa-lock"></span>
+		</div>
+		<label class="login__row checkbox" for="login_not_save">
+			<input type="checkbox" name="login_not_save" id="login_not_save" value="1"/>
+			<span>Не запоминать меня</span>
+		</label>
+		<div class="login__row">
+			<button onclick="submit();" type="submit" title="Вход">Войти на сайт</button>
+			<input name="login" type="hidden" id="login" value="submit" />
+		</div>
+	</div>
+
+	</form>
+</div>
+</div>
+				</div>
+				<div class="header__menu">
+					<div class="header__menu-inner wrapper-container">							<div class="nav-col">
+							<div class="nav-title">Меню</div>
+								<ul class="nav-menu">
+									<li><a  href="/mylists/">Закладки</a></li>
+									<li><a  href="/top-anime-anixart.html">ТОП 100</a></li>
+									<li><a  href="/anime/god/2026/">Аниме 2026 года</a></li>
+                                    <li><a  href="/schedule/">Расписание</a></li>									
+								</ul>
+								<div class="nav-title">Жанры</div>
+								<ul class="nav-menu">
+									<li><a href="/anime/zhanr/сёнен/">Сёнен</a></li>
+									<li><a   href="/anime/zhanr/сэйнэн/">Сэйнэн</a></li>
+									<li><a   href="/anime/zhanr/Сёдзё/">Сёдзё</a></li>
+									<li><a  href="/anime/zhanr/Дзёсей/">Дзёсей</a></li>
+									<li><a   href="/anime/zhanr/Комедия/">Комедия</a></li>
+									<li><a   href="/anime/zhanr/Романтика/">Романтика</a></li>
+									<li><a   href="/anime/zhanr/Школа/">Школа</a></li>
+									<li><a   href="/anime/zhanr/Безумие/">Безумие</a></li>
+									<li><a   href="/anime/zhanr/Боевые искусства/">Боевые искусства</a></li>
+									<li><a   href="/anime/zhanr/Вампиры/">Вампиры</a></li>
+									<li><a   href="/anime/zhanr/Военное/">Военное</a></li>
+									<li><a   href="/anime/zhanr/Гарем/">Гарем</a></li>
+									<li><a   href="/anime/zhanr/Гурман/">Гурман</a></li>
+									<li><a   href="/anime/zhanr/Демоны/">Демоны</a></li>
+									<li><a   href="/anime/zhanr/Детектив/">Детектив</a></li>
+									<li><a   href="/anime/zhanr/Детское/">Детское</a></li>
+									<li><a   href="/anime/zhanr/Драма/">Драма</a></li>
+									<li><a   href="/anime/zhanr/Игры/">Игры</a></li>
+									<li><a   href="/anime/zhanr/Исторический/">Исторический</a></li>
+									<li><a   href="/anime/zhanr/Космос/">Космос</a></li>
+									<li><a   href="/anime/zhanr/Машины/">Машины</a></li>
+									<li><a   href="/anime/zhanr/Меха/">Меха</a></li>
+									<li><a   href="/anime/zhanr/Музыка/">Музыка</a></li>
+									<li><a   href="/anime/zhanr/Пародия/">Пародия</a></li>
+									<li><a   href="/anime/zhanr/Повседневность/">Повседневность</a></li>
+									<li><a   href="/anime/zhanr/Полиция/">Полиция</a></li>
+									<li><a   href="/anime/zhanr/Приключения/">Приключения</a></li>
+									<li><a   href="/anime/zhanr/Психологическое/">Психологическое</a></li>
+									<li><a   href="/anime/zhanr/Работа/">Работа</a></li>
+									<li><a   href="/anime/zhanr/Самураи/">Самураи</a></li>
+									<li><a   href="/anime/zhanr/Сверхъестественное/">Сверхъестественное</a></li>
+									<li><a   href="/anime/zhanr/Спорт/">Спорт</a></li>
+									<li><a   href="/anime/zhanr/Супер сила/">Супер сила</a></li>
+									<li><a   href="/anime/zhanr/Ужасы/">Ужасы</a></li>
+									<li><a   href="/anime/zhanr/Фантастика/">Фантастика</a></li>
+									<li><a   href="/anime/zhanr/Фэнтези/">Фэнтези</a></li>
+									<li><a   href="/anime/zhanr/Экшен/">Экшен</a></li>
+									<li><a   href="/anime/zhanr/Этти/">Этти</a></li>
+									<li><a   href="/anime/zhanr/Триллер/">Триллер</a></li>
+								</ul>
+							</div>
+							<div class="nav-col">
+								<div class="nav-title">Статус</div>
+								<ul class="nav-menu">
+									<li><a  href="/ongoingi/">Онгоинги</a></li>
+									<li><a  href="/zavershennye/">Завершенные</a></li>
+									<li><a  href="/anonsy/">Анонсы</a></li>
+									
+								</ul>
+								<div class="nav-title">Тип</div>
+								<ul class="nav-menu">
+									<li><a  href="/anime/tip/тв-сериал/">TV Сериал</a></li>
+									<li><a  href="/anime/tip/OVA/">OVA</a></li>
+									<li><a  href="/anime/tip/ONA/">ONA</a></li>
+									<li><a  href="/anime/tip/ФИЛЬМ/">ФИЛЬМ</a></li>
+								</ul>
+								<div class="nav-title">Год</div>
+								<ul class="nav-menu">
+                                <li><a  href="/anime/god/2026/">2026</a></li>
+                                    <li><a  href="/anime/god/2025/">2025</a></li>
+								    <li><a  href="/anime/god/2024/">2024</a></li>
+									<li><a  href="/anime/god/2023/">2023</a></li>
+									<li><a  href="/anime/god/2022/">2022</a></li>
+									<li><a  href="/anime/god/2021/">2021</a></li>
+									<li><a  href="/anime/god/2020/">2020</a></li>
+									<li><a  href="/anime/god/2019/">2019</a></li>
+									<li><a  href="/anime/god/2018/">2018</a></li>
+									<li><a  href="/anime/god/2017/">2017</a></li>
+									<li><a  href="/anime/god/2016/">2016</a></li>
+									<li><a  href="/anime/god/2015/">2015</a></li>
+									<li><a  href="/anime/god/2014/">2014</a></li>
+									<li><a  href="/anime/god/2013/">2013</a></li>
+									<li><a  href="/anime/god/2012/">2012</a></li>
+								</ul>
+								
+								<div class="nav-title">Сезон</div>
+								<ul class="nav-menu"> 
+                                <li><a   href="/anime/sezon_goda/лето 2026/">Зима 2026</a></li>    
+                                <li><a   href="/anime/sezon_goda/осень 2025/">Осень 2025</a></li>    
+                                <li><a   href="/anime/sezon_goda/лето 2025/">Лето 2025</a></li>    
+                                <li><a   href="/anime/sezon_goda/весна 2025/">Весна 2025</a></li>    
+                                <li><a   href="/anime/sezon_goda/зима 2025/">Зима 2025</a></li>    
+                                <li><a   href="/anime/sezon_goda/осень 2024/">Осень 2024</a></li>    
+								<li><a   href="/anime/sezon_goda/лето 2024/">Лето 2024</a></li>
+								<li><a   href="/anime/sezon_goda/весна 2024/">Весна 2024</a></li>
+									<li><a   href="/anime/sezon_goda/зима 2024/">Зима 2024</a></li>
+								<li><a   href="/anime/sezon_goda/осень 2023/">Осень 2023</a></li>
+								<li><a   href="/anime/sezon_goda/лето 2023/">Лето 2023</a></li>
+								<li><a   href="/anime/sezon_goda/весна 2023/">Весна 2023</a></li>
+									<li><a   href="/anime/sezon_goda/зима 2023/">Зима 2023</a></li>
+									<li><a   href="/anime/sezon_goda/осень 2022/">Осень 2022</a></li>
+									<li><a   href="/anime/sezon_goda/лето 2022/">Лето 2022</a></li>
+									<li><a   href="/anime/sezon_goda/весна 2022/">Весна 2022</a></li>
+									<li><a   href="/anime/sezon_goda/зима 2022/">Зима 2022</a></li>
+									<li><a   href="/anime/sezon_goda/осень 2021/">Осень 2021</a></li>
+									<li><a   href="/anime/sezon_goda/лето 2021/">Лето 2021</a></li>
+									<li><a   href="/anime/sezon_goda/весна 2021/">Весна 2021</a></li>
+									<li><a   href="/anime/sezon_goda/зима 2021/">Зима 2021</a></li>
+									<li><a   href="/anime/sezon_goda/осень 2020/">Осень 2020</a></li>
+
+									
+								</ul>
+							</div></div>
+				</div>
+			</header>
+
+			<!-- END HEADER -->
+
+			<main class="content">
+
+				
+
+			
+			<div class="animeblok">
+			      <h2 class="sect__title1">Новые серии на AnixART</h2>
+			      <div class="sect__content"><div id="ajaxCustom-serii"><div class="content-wrapper">
+	<div class="js-custom-content dle-content">
+		<div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/7837-kopjen.html" class="fr__title1 ws-nowrap">Копэн</a>
+	</div>
+	<div class="fr__year1"><span>80</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8648-otel-dlja-neljudej-2.html" class="fr__title1 ws-nowrap">Отель для нелюдей 2</a>
+	</div>
+	<div class="fr__year1"><span>2</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8647-kreslo-tank.html" class="fr__title1 ws-nowrap">Кресло-танк</a>
+	</div>
+	<div class="fr__year1"><span>2</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8656-pererozhdenie-v-aristokrata-so-sposobnostju-analiza-3.html" class="fr__title1 ws-nowrap">Перерождение в аристократа со способностью анализа 3</a>
+	</div>
+	<div class="fr__year1"><span>3</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8637-nesmotrja-na-to-chto-ja-ochen-robkaja-blagorodnaja-devushka-ja-prinjala-pari-ot-svoego-hitrogo-zheniha.html" class="fr__title1 ws-nowrap">Несмотря на то, что я очень робкая благородная девушка, я приняла пари от своего хитрого жениха</a>
+	</div>
+	<div class="fr__year1"><span>2</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8630-vo-vseoruzhii-sila-artefaktov.html" class="fr__title1 ws-nowrap">Во всеоружии: Сила артефактов</a>
+	</div>
+	<div class="fr__year1"><span>3</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8616-ja-ochnulsja-buduchi-pilotom-silnejshego-kosmicheskogo-korablja-a-potomu-reshil-stat-mezhgalakticheskim-naemnikom.html" class="fr__title1 ws-nowrap">Я очнулся будучи пилотом сильнейшего космического корабля, а потому решил стать межгалактическим наёмником</a>
+	</div>
+	<div class="fr__year1"><span>2</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8651-djadechka-kotoromu-nravjatsja-milye-veschi.html" class="fr__title1 ws-nowrap">Дядечка, которому нравятся милые вещи</a>
+	</div>
+	<div class="fr__year1"><span>2</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8046-vladyka-mnozhestva-mirov-3.html" class="fr__title1 ws-nowrap">Владыка множества миров 3</a>
+	</div>
+	<div class="fr__year1"><span>216</span> серия</div>
+</div><div class="fr1 d-flex ai-center anim">
+	<div class="fr__desc1 flex-grow-1">
+		<a href="/8028-skazanie-o-pastuhe-bogov.html" class="fr__title1 ws-nowrap">Сказание о пастухе богов</a>
+	</div>
+	<div class="fr__year1"><span>104</span> серия</div>
+</div>
+	</div>
+	<div class="js-custom-navigation" data-name="serii" data-type="main">
+		
+
+<div class="ac-navigation">
+	
+
+	
+	
+		<span class="active">Назад</span>
+	
+	
+
+	
+	<span class="active">1</span><a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#" data-page="4">4</a><a href="#" data-page="5">5</a><a href="#" data-page="6">6</a><span class="nav_ext">...</span><a href="#" data-page="10">10</a>
+	
+
+	
+	
+		<a href="#" data-page="2">Вперед</a>
+	
+	
+
+	
+</div>
+	</div>
+</div></div></div>
+			</div>
+			
+			<div class="animeblok">
+			      <h2 class="sect__title1">Расписание выхода серий</h2>
+				   <div class="sect__content">
+			        <div class="calendar box-body-s">
+   			        <div class="calendar__item">
+      			        <div class="calendar__item-weekday">
+         			        <h3>Сегодня</h3>
+      			        </div>
+      			        
+   			        </div>
+   			        <div class="calendar__item">
+      			        <div class="calendar__item-weekday">
+         			        <h3>Завтра</h3>
+      			        </div>
+      			        
+   			        </div>
+		        </div>
+				</div>
+			</div>
+			
+			<div class="animeblok">
+			      <h2 class="sect__title1">Вы недавно смотрели:</h2>
+			      <div class="sect__content"></div>
+			</div>
+			
+
+			
+				
+				
+				<div class="sect">
+					<div class="sect__header sect__header--bordered d-flex ai-center">
+					
+						<ul class="sect__menu d-flex">
+							<li><span>Все аниме</span></li>
+							<li><a href="/ongoingi/">Онгоинги</a></li>
+							<li><a href="/zavershennye/">Завершенны</a></li>
+							<li><a href="/anonsy/">Анонсы</a></li>
+						</ul>
+					
+					
+					<div class="filter-block">
+	<form data-dlefilter="dle-filter" class="filter-block__form">
+		<div class="filter-block__cell">
+			<div class="filter-block__cell-caption">Жанр</div>
+			<div class="filter-block__cell-content">
+	<select name="zhanr">
+<option value="" label="Жанр">Все</option>
+<option value="Сёнен">Сёнен</option>
+<option value="Сэйнэн">Сэйнэн</option>
+<option value="Сёдзё">Сёдзё</option>
+<option value="Сёдзё-ай">Сёдзё-ай</option>
+<option value="Дзёсей">Дзёсей</option>
+<option value="Комедия">Комедия</option>
+<option value="Романтика">Романтика</option>
+<option value="Школа">Школа</option>
+<option value="Безумие">Безумие</option>
+<option value="Боевые искусства">Боевые искусства</option>
+<option value="Вампиры">Вампиры</option>
+<option value="Военное">Военное</option>
+<option value="Гарем">Гарем</option>
+<option value="Гурман">Гурман</option>
+<option value="Демоны">Демоны</option>
+<option value="Детектив">Детектив</option>
+<option value="Детское">Детское</option>
+<option value="Драма">Драма</option>
+<option value="Игры">Игры</option>
+<option value="Исторический">Исторический</option>
+<option value="Космос">Космос</option>
+<option value="Магия">Магия</option>
+<option value="Машины">Машины</option>
+<option value="Меха">Меха</option>
+<option value="Музыка">Музыка</option>
+<option value="Пародия">Пародия</option>
+<option value="Повседневность">Повседневность</option>
+<option value="Полиция">Полиция</option>
+<option value="Приключения">Приключения</option>
+<option value="Психологическое">Психологическое</option>
+<option value="Работа">Работа</option>
+<option value="Самураи">Самураи</option>
+<option value="Сверхъестественное">Сверхъестественное</option>
+<option value="Спорт">Спорт</option>
+<option value="Супер сила">Супер сила</option>
+<option value="Ужасы">Ужасы</option>
+<option value="Фантастика">Фантастика</option>
+<option value="Фэнтези">Фэнтези</option>
+<option value="Экшен">Экшен</option>
+<option value="Этти">Этти</option>
+<option value="Триллер">Триллер</option>
+				</select>
+			</div>
+		</div>
+			<div class="filter-block__cell">
+			<div class="filter-block__cell-caption">Исключить жанр</div>
+			<div class="filter-block__cell-content">
+	<select name="v.zhanr">
+<option value="" label="Жанр">Ничего</option>
+<option value="Сёнен">Сёнен</option>
+<option value="Сёнен-ай">Сёнен-ай</option>
+<option value="Сэйнэн">Сэйнэн</option>
+<option value="Сёдзё">Сёдзё</option>
+<option value="Сёдзё-ай">Сёдзё-ай</option>
+<option value="Дзёсей">Дзёсей</option>
+<option value="Комедия">Комедия</option>
+<option value="Романтика">Романтика</option>
+<option value="Школа">Школа</option>
+<option value="Безумие">Безумие</option>
+<option value="Боевые искусства">Боевые искусства</option>
+<option value="Вампиры">Вампиры</option>
+<option value="Военное">Военное</option>
+<option value="Гарем">Гарем</option>
+<option value="Гурман">Гурман</option>
+<option value="Демоны">Демоны</option>
+<option value="Детектив">Детектив</option>
+<option value="Детское">Детское</option>
+<option value="Драма">Драма</option>
+<option value="Игры">Игры</option>
+<option value="Исторический">Исторический</option>
+<option value="Космос">Космос</option>
+<option value="Магия">Магия</option>
+<option value="Машины">Машины</option>
+<option value="Меха">Меха</option>
+<option value="Музыка">Музыка</option>
+<option value="Пародия">Пародия</option>
+<option value="Повседневность">Повседневность</option>
+<option value="Полиция">Полиция</option>
+<option value="Приключения">Приключения</option>
+<option value="Психологическое">Психологическое</option>
+<option value="Работа">Работа</option>
+<option value="Самураи">Самураи</option>
+<option value="Сверхъестественное">Сверхъестественное</option>
+<option value="Спорт">Спорт</option>
+<option value="Супер сила">Супер сила</option>
+<option value="Ужасы">Ужасы</option>
+<option value="Фантастика">Фантастика</option>
+<option value="Фэнтези">Фэнтези</option>
+<option value="Экшен">Экшен</option>
+<option value="Этти">Этти</option>
+<option value="Триллер">Триллер</option>
+				</select>
+			</div>
+		</div>
+		<div class="filter-block__cell">
+			<div class="filter-block__cell-caption">Статус</div>
+			<div class="filter-block__cell-content">
+				<select  name="cat" data-placeholder="Выберите статус аниме...">
+						<option value="" label="Статус">Все</option>
+						<option value="9">Онгоинги</option>
+						<option value="11">Завершенные</option>
+						<option value="10">Анонсы</option>
+					</select>
+			</div>
+		</div>
+			<div class="filter-block__cell">
+			<div class="filter-block__cell-caption">Тип</div>
+			<div class="filter-block__cell-content">
+				<select  name="tip" data-placeholder="Выберите статус аниме...">
+						<option value="" label="Тип">Все</option>
+						<option value="ТВ-сериал">ТВ-сериал</option>
+						<option value="OVA">OVA</option>
+						<option value="ONA">ONA</option>
+						<option value="Фильм">Фильм</option>
+					</select>
+			</div>
+		</div>
+		<div class="filter-block__cell">
+			<div class="filter-block__cell-caption">Год</div>
+			<div class="filter-block__cell-content">
+				<select  name="god" data-placeholder="Выберите статус аниме...">
+						<option value="" label="Год">Все</option>
+						<option value="2023">2023</option>
+						<option value="2022">2022</option>
+						<option value="2021">2021</option>
+						<option value="2020">2020</option>
+						<option value="2019">2019</option>
+						<option value="2018">2018</option>
+						<option value="2017">2017</option>
+						<option value="2016">2016</option>
+						<option value="2015">2015</option>
+						<option value="2014">2014</option>
+						<option value="2013">2013</option>
+						<option value="2012">2012</option>
+						<option value="2011">2011</option>
+						<option value="2009">2009</option>
+						<option value="2008">2008</option>
+						<option value="2007">2007</option>
+						<option value="2006">2006</option>
+						<option value="2005">2005</option>
+						<option value="2004">2004</option>
+						<option value="2003">2003</option>
+						<option value="2002">2002</option>
+						<option value="2001">2001</option>
+						<option value="2000">2000</option>
+						<option value="1999">1999</option>
+						<option value="1998">1998</option>
+						<option value="1997">1997</option>
+						<option value="1996">1996</option>
+						<option value="1995">1995</option>
+						<option value="1994">1994</option>
+						<option value="1993">1993</option>
+						<option value="1992">1992</option>
+						<option value="1991">1991</option>
+						<option value="1990">1990</option>
+						<option value="1989">1989</option>
+						<option value="1988">1988</option>
+						<option value="1987">1987</option>
+						<option value="1986">1986</option>
+						<option value="1985">1985</option>
+						<option value="1984">1984</option>
+						<option value="1983">1983</option>
+						<option value="1982">1982</option>
+						<option value="1981">1981</option>
+						<option value="1980">1980</option>
+						<option value="1979">1979</option>
+						<option value="1978">1978</option>
+						<option value="1977">1977</option>
+						<option value="1976">1976</option>
+						<option value="1975">1975</option>
+						<option value="1974">1974</option>
+						<option value="1973">1973</option>
+						<option value="1972">1972</option>
+						<option value="1971">1971</option>
+						<option value="1970">1970</option>
+						<option value="1969">1969</option>
+						<option value="1968">1968</option>
+						<option value="1967">1967</option>
+						<option value="1966">1966</option>
+						<option value="1965">1965</option>
+						<option value="1964">1964</option>
+						<option value="1963">1963</option>
+						<option value="1962">1962</option>
+						<option value="1961">1961</option>
+						<option value="1960">1960</option>
+						<option value="1959">1959</option>
+						<option value="1958">1958</option>
+						<option value="1956">1956</option>
+						<option value="1943">1943</option>
+						
+						
+						
+
+
+						
+						
+					</select>
+			</div>
+		</div>
+		<div class="filter-block__cell">
+			<div class="filter-block__cell-caption">Сортировка</div>
+			<div class="filter-block__cell-content">
+				<select name="sort" >
+						<option value="news_read">Просмотрам</option>
+						<option value="d.god">Году</option>						
+						<option value="title">Алфавиту</option>		
+                        <option value="comm_num">Кол-ву комментариев</option>						
+						<option value="rating">Рейтингу</option>
+						<option value="d.reiting">Рейтингу Shikimori</option>
+
+						
+					</select>
+			</div>
+		</div>
+	
+	</form>
+</div>
+					</div>
+				
+					<div class="sect__content grid-items"><div id="dle-content"><a class="item item-poster grid-item" href="https://anixart.site/7004-magicheskaja-bitva-2.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-06/magicheskaja-bitva-2.jpg" loading="lazy" alt="Магическая битва 2">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.6</div>
+		
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Магическая битва 2</div>
+	<div class="item-poster__meta ws-nowrap">2023, экшен,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/5578-van-pis.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/1679645584_van-pis.jpg" loading="lazy" alt="Ван-Пис">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.6</div>
+		<div class="item__rating1">8.72</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Ван-Пис</div>
+	<div class="item-poster__meta ws-nowrap">1999, экшен,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/4971-blich.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/blich.jpg" loading="lazy" alt="Блич">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.5</div>
+		<div class="item__rating1">7.91</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Блич</div>
+	<div class="item-poster__meta ws-nowrap">2004, экшен,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/7275-monolog-farmacevta.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-09/monolog-farmacevta.jpg" loading="lazy" alt="Монолог фармацевта">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.8</div>
+		
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Монолог фармацевта</div>
+	<div class="item-poster__meta ws-nowrap">2023, драма,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/1856-chernyj-klever.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/chernyj-klever.jpg" loading="lazy" alt="Чёрный клевер">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.6</div>
+		<div class="item__rating1">8.14</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Чёрный клевер</div>
+	<div class="item-poster__meta ws-nowrap">2017, сёнен,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/824-magicheskaja-bitva.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/magicheskaja-bitva.jpg" loading="lazy" alt="Магическая битва">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.5</div>
+		<div class="item__rating1">8.5</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Магическая битва</div>
+	<div class="item-poster__meta ws-nowrap">2020, экшен,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/7517-alja-inogda-koketnichaet-so-mnoj-po-russki.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2024-08/alja-inogda-koketnichaet-so-mnoj-po-russki.jpg" loading="lazy" alt="Аля иногда кокетничает со мной по-русски">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.4</div>
+		<div class="item__rating1">7.86</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Аля иногда кокетничает со мной по-русски</div>
+	<div class="item-poster__meta ws-nowrap">2024, комедия,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/7007-blich-tysjacheletnjaja-krovavaja-vojna-proschanie.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-06/blich-tysjacheletnjaja-krovavaja-vojna-proschanie.jpg" loading="lazy" alt="Блич: Тысячелетняя кровавая война — Прощание">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.5</div>
+		<div class="item__rating1">8.7</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Блич: Тысячелетняя кровавая война — Прощание</div>
+	<div class="item-poster__meta ws-nowrap">2023, экшен,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/6882-ja-poluchil-chiterskie-sposobnosti-v-drugom-mire-i-stal-jekstraordinarnym-v-realnom-mire-istorija-o-tom-kak-povyshenie-urovnja-izmenilo-moju-zhizn.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-04/ja-poluchil-chiterskie-sposobnosti-v-drugom-mire-i-stal-jekstraordinarnym-v-realnom-mire-istorija-o-tom-kak-povyshenie-urovnja-izmenilo-moju-zhizn.jpg" loading="lazy" alt="Я получил читерские способности в другом мире и стал экстраординарным в реальном мире: История о том, как повышение уровня изменило мою жизнь">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">8.8</div>
+		<div class="item__rating1">7.5</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Я получил читерские способности в другом мире и стал экстраординарным в реальном мире: История о том, как повышение уровня изменило мою жизнь</div>
+	<div class="item-poster__meta ws-nowrap">2023, приключени</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/2734-tokijskij-gul.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/tokijskij-gul.jpg" loading="lazy" alt="Токийский гуль">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.3</div>
+		<div class="item__rating1">7.79</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Токийский гуль</div>
+	<div class="item-poster__meta ws-nowrap">2014, сэйнэн,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/1127-klinok-rassekajuschij-demonov.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-03/klinok-rassekajuschij-demonov.jpg" loading="lazy" alt="Клинок, рассекающий демонов">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.5</div>
+		<div class="item__rating1">8.43</div>
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Клинок, рассекающий демонов</div>
+	<div class="item-poster__meta ws-nowrap">2019, экшен,</div>
+	
+</a><a class="item item-poster grid-item" href="https://anixart.site/7262-provozhajuschaja-v-poslednij-put-friren.html">
+	<div class="item-poster__img img-fit-cover img-responsive img-responsive--portrait">
+		<img src="/uploads/posts/2023-09/provozhajuschaja-v-poslednij-put-friren.jpg" loading="lazy" alt="Провожающая в последний путь Фрирен">
+		<div class="item__play-btn anim"><span class="fal fa-play"></span></div>
+		
+		<div class="item__rating">9.8</div>
+		
+		
+	</div>
+	<div class="item-poster__title ws-nowrap">Провожающая в последний путь Фрирен</div>
+	<div class="item-poster__meta ws-nowrap">2023, приключени</div>
+	
+</a><!--ENGINE_NAVIGATION--><div class="pagination ignore-select d-flex jc-center ai-center" id="pagination">
+	<div class="pagination__pages-btn"><span><span class="fal fa-chevron-left"></span></span></div>
+	<div class="pagination__pages d-flex"><span>1</span> <a href="https://anixart.site/page/2/">2</a> <a href="https://anixart.site/page/3/">3</a> <a href="https://anixart.site/page/4/">4</a> <a href="https://anixart.site/page/5/">5</a> <a href="https://anixart.site/page/6/">6</a> <a href="https://anixart.site/page/7/">7</a> <a href="https://anixart.site/page/8/">8</a> <a href="https://anixart.site/page/9/">9</a> <a href="https://anixart.site/page/10/">10</a> <span class="nav_ext">...</span> <a href="https://anixart.site/page/700/">700</a></div>
+	<div class="pagination__pages-btn"><a href="https://anixart.site/page/2/"><span class="fal fa-chevron-right"></span></a></div>
+</div><!--/ENGINE_NAVIGATION--></div></div>
+				</div>
+				
+
+				
+
+
+
+				
+<section class="site-desc order-last">
+	<h1>AnixART - Сайт приложение для просмотра аниме онлайн</h1>
+	<p>AnixART (Аниксарт) - это приложение для просмотра ваших любимых анимешек в онлайн режиме, на компьютере (ПК) web, телевизоре (Smart TV), а также на мобильных андройд устройствах и айфонах appl телефонах, планшетах с iOS бесплатно. 
+	</p>
+	
+		<p>Аниме - это японские анимационные фильмы или телевизионные сериалы, которые отличаются от западных анимационных произведений своим характерным стилем и визуальным языком. Аниме является популярной формой развлечения не только в Японии, но и во многих других странах мира его любят смотреть онлайн, где люди увлечены японской культурой и искусством. Аниме может включать в себя различные жанры, такие как научная фантастика, фэнтези, романтика, экшн, ужасы и др. Оно часто основывается на японских комиксах, называемых манга, и может быть как адаптацией, так и оригинальным произведением.	</p>
+	
+	<h2>Теперь не нужно скачивать приложение AnixART на ПК и айфон, айпад</h2>
+	<p>Многие пользователи жаловались что не могут смотреть аниме в приложение Аниксарт на айфон по этому и было решино создать сайт, где вы без проблем сможете посмотреть в онлайне любое понравившееся аниме на любом устройстве в том числе и на Аппл iOS iphon</p>
+	
+	<h2>Для чего вообще нужен сайт AnixART если есть приложение?</h2>
+	<p>Очень много пользователей не могут загрузить, скачать, установить приложение или же у них не работает приложение Anixart.</p>
+	
+</section>
+
+
+
+
+
+			</main>
+
+			<!-- END CONTENT -->
+
+			<footer class="footer d-flex ai-center vw100">
+				<div class="logo footer__logo">Anix<span>ART</span></div>почта для правообладателей AnimeOnlineSu.net@ya.ru
+
+				<ul class="footer__menu flex-grow-1 d-flex jc-flex-end">
+					<li><a href="/">Главная</a></li>
+					<li><a href="#">Новинки</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="/?do=feedback">Контакты</a></li>
+				</ul>
+<!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
+target="_blank"><img id="licnt8F24" width="31" height="31" style="border:0" 
+title="LiveInternet"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licnt8F24").src=
+"https://counter.yadro.ru/hit?t44.1;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+
+			</footer>
+
+			<!-- END FOOTER -->
+
+		</div>
+
+		<!-- END WRAPPER-MAIN -->
+
+	</div>
+
+	<!-- END WRAPPER -->
+	
+	
+<script src="/engine/classes/js/jquery3.js?v=905b7"></script>
+<script src="/engine/classes/js/jqueryui3.js?v=905b7" defer></script>
+<script src="/engine/classes/js/dle_js.js?v=905b7" defer></script>
+<script src="/templates/Anixart/custom/assets/libs.js?v=905b7" defer></script>
+	<script src="/templates/Anixart/js/libs.js?v-2"></script>
+	<script src="/templates/Anixart/js/filter.js"></script>
+	<script>
+<!--
+var dle_root       = '/';
+var dle_admin      = '';
+var dle_login_hash = '5fc2cef46c8e3ac53dde5b23c9f5c69eb83b2a00';
+var dle_group      = 5;
+var dle_skin       = 'Anixart';
+var dle_wysiwyg    = '2';
+var quick_wysiwyg  = '2';
+var dle_min_search = '4';
+var dle_act_lang   = ["Да", "Нет", "Ввод", "Отмена", "Сохранить", "Удалить", "Загрузка. Пожалуйста, подождите..."];
+var menu_short     = 'Быстрое редактирование';
+var menu_full      = 'Полное редактирование';
+var menu_profile   = 'Просмотр профиля';
+var menu_send      = 'Отправить сообщение';
+var menu_uedit     = 'Админцентр';
+var dle_info       = 'Информация';
+var dle_confirm    = 'Подтверждение';
+var dle_prompt     = 'Ввод информации';
+var dle_req_field  = ["Заполните поле с именем", "Заполните поле с сообщением", "Заполните поле с темой сообщения"];
+var dle_del_agree  = 'Вы действительно хотите удалить? Данное действие невозможно будет отменить';
+var dle_spam_agree = 'Вы действительно хотите отметить пользователя как спамера? Это приведёт к удалению всех его комментариев';
+var dle_c_title    = 'Отправка жалобы';
+var dle_complaint  = 'Укажите текст Вашей жалобы для администрации:';
+var dle_mail       = 'Ваш e-mail:';
+var dle_big_text   = 'Выделен слишком большой участок текста.';
+var dle_orfo_title = 'Укажите комментарий для администрации к найденной ошибке на странице:';
+var dle_p_send     = 'Отправить';
+var dle_p_send_ok  = 'Уведомление успешно отправлено';
+var dle_save_ok    = 'Изменения успешно сохранены. Обновить страницу?';
+var dle_reply_title= 'Ответ на комментарий';
+var dle_tree_comm  = '0';
+var dle_del_news   = 'Удалить статью';
+var dle_sub_agree  = 'Вы действительно хотите подписаться на комментарии к данной публикации?';
+var dle_unsub_agree  = 'Вы действительно хотите отписаться от комментариев к данной публикации?';
+var dle_captcha_type  = '0';
+var dle_share_interesting  = ["Поделиться ссылкой на выделенный текст", "Twitter", "Facebook", "Вконтакте", "Прямая ссылка:", "Нажмите правой клавишей мыши и выберите «Копировать ссылку»"];
+var DLEPlayerLang     = {prev: 'Предыдущий',next: 'Следующий',play: 'Воспроизвести',pause: 'Пауза',mute: 'Выключить звук', unmute: 'Включить звук', settings: 'Настройки', enterFullscreen: 'На полный экран', exitFullscreen: 'Выключить полноэкранный режим', speed: 'Скорость', normal: 'Обычная', quality: 'Качество', pip: 'Режим PiP'};
+var allow_dle_delete_news   = false;
+var dle_search_delay   = false;
+var dle_search_value   = '';
+jQuery(function($){
+FastSearch();
+});
+//-->
+</script><script>
+let urlFilter = 0;
+let dleFilterJSData = [];
+let dleFilterId = 1;
+</script>
+<script type="text/javascript" src="/engine/classes/js/mylists.js"></script><script type="text/javascript">$(document).ready(function(e) { MyLists = new MyLists(false, '{"_1_":["\u041b\u044e\u0431\u0438\u043c\u043e\u0435","likeserials"],"_2_":["\u0421\u043c\u043e\u0442\u0440\u044e","watching"],"_3_":["\u0417\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u043e","scheduled"],"_4_":["\u041f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u043e","viewed"],"_5_":["\u041e\u0442\u043b\u043e\u0436\u0435\u043d\u043e","postponed"],"_6_":["\u0411\u0440\u043e\u0448\u0435\u043d\u043e","thrown"]}'); });</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104070838', 'ym');
+
+    ym(104070838, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/104070838" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+		<script type="text/javascript"> var initialDateStr = ""; </script>
+
+<script src="/templates/Anixart/lazydev/dle_filter/assets/dle_filter.js" defer></script>
+<script src="/engine/lazydev/dle_filter/lib/dle_filter.js.php" defer></script>
+<script src="/templates/Anixart/lazydev/dle_filter/assets/dle_filter.js" defer></script>
+ <script src="https://player.cdnvideohub.com/s2/stable/video-player.umd.js"></script>
+
+</body>
+</html>
+
+<!-- DataLife Engine Copyright SoftNews Media Group (http://dle-news.ru) -->
